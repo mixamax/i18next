@@ -1,10 +1,11 @@
 import { Suspense } from "react";
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export const withRouter = (component) => () =>
     (
-        <BrowserRouter>
+        <HashRouter>
             <Suspense fallback={<CircularProgress />}>{component()}</Suspense>
-        </BrowserRouter>
+        </HashRouter>
     );
